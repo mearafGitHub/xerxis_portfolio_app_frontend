@@ -1,7 +1,7 @@
 import './App.css';
 import {useState} from 'react';
-import WalletInputs  from './Component/WalletInputs';
-import NativeTokes from './Component/NativeTokes';
+import WalletInputs  from './Components/WalletInputs';
+import NativeTokes from './Components/NativeTokes';
  
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <WalletInputs 
       chain={chain}
       setChain={setChain}

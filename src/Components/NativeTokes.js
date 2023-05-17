@@ -9,12 +9,12 @@ function NativeTokes({wallet, chain, nativeValue, nativeBalance, tokenPrice, set
                 chain: chain,
             },
         });
-        console.log("Response data: ", response.data.token_price_usd)
+        console.log("Response data: ", response.data)
 
-        if (response.data.balance && response.data.balance_usd){
+        if (response.data.balance){
             setNativeBalance(Number(response.data.balance))
             setNativeValue(response.data.balance_usd)
-            setTokenPrice(Number(response.data.token_price_usd))
+            setTokenPrice(Number(response.data.token_price_usd).toFixed(4))
 
         }
     }  
@@ -23,7 +23,7 @@ function NativeTokes({wallet, chain, nativeValue, nativeBalance, tokenPrice, set
         <h1>Fetch Native Balance</h1>
         <button onClick={getNativeBalance}>Fetch Native Balance</button>
         <br></br>
-        <span>Native Balance:  {nativeBalance}  ( $ {nativeValue} )  |  Native Price: {tokenPrice}</span>
+        <span>Native Balance:  {nativeBalance}  ( $ {nativeValue} )  |  Native Currency Price: {tokenPrice}</span>
         <p></p>
     </div>
   )
