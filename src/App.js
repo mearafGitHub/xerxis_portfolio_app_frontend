@@ -1,5 +1,4 @@
 import './App.css';
-import axios from 'axios';
 import {useState} from 'react';
 import WalletInputs  from './Component/WalletInputs';
 import NativeTokes from './Component/NativeTokes';
@@ -11,11 +10,7 @@ function App() {
 
   const [nativeBalance, setNativeBalance] = useState(0)
   const [nativeValue, setNativeValue] = useState(0)
-
-  async function fetchHello(){
-     const response = await axios.get("http://localhost:8088/")
-     console.log("Response: ", response)
-  }
+  const [tokenPrice, setTokenPrice] = useState(0)
 
   return (
     <div className="App">
@@ -31,8 +26,10 @@ function App() {
       chain={chain}
       nativeBalance={nativeBalance}
       nativeValue={nativeValue}
-      setNativeBalance={setChain}
-      setNativeValue={setWallet}
+      tokenPrice={tokenPrice}
+      setTokenPrice={setTokenPrice}
+      setNativeBalance={setNativeBalance}
+      setNativeValue={setNativeValue}
       />
 
     </div>
